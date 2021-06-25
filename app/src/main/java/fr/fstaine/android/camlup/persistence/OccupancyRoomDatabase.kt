@@ -4,10 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import fr.fstaine.android.camlup.persistence.entities.Occupancy
 import fr.fstaine.android.camlup.persistence.entities.OccupancyDao
 
 @Database(entities = [Occupancy::class], version = 1, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class OccupancyRoomDatabase : RoomDatabase() {
 
     abstract fun occupancyDao(): OccupancyDao

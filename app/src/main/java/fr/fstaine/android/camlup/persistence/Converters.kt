@@ -3,7 +3,8 @@ package fr.fstaine.android.camlup.persistence
 import androidx.room.TypeConverter
 import java.time.Instant
 
-object Converters {
+class Converters {
+
     @TypeConverter
     fun fromTimestamp(value: Long?): Instant? = value?.let { Instant.ofEpochMilli(it) }
 
