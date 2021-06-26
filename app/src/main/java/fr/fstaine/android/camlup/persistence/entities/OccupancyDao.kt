@@ -1,9 +1,6 @@
 package fr.fstaine.android.camlup.persistence.entities
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -14,4 +11,7 @@ interface OccupancyDao {
 
     @Query("SELECT * FROM occupancy")
     fun getAll(): Flow<List<Occupancy>>
+
+    @Query("DELETE FROM Occupancy")
+    fun deleteAll()
 }
