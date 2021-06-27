@@ -1,4 +1,4 @@
-package fr.fstaine.android.camlup
+package fr.fstaine.android.camlup.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,10 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import fr.fstaine.android.camlup.view.OccupancyListAdapter
+import fr.fstaine.android.camlup.CrowdUpApplication
+import fr.fstaine.android.camlup.OccupancyViewModel
+import fr.fstaine.android.camlup.OccupancyViewModelFactory
+import fr.fstaine.android.camlup.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,5 +30,10 @@ class MainActivity : AppCompatActivity() {
         occupancyViewModel.allOccupancies.observe(this, Observer { occupancies ->
             occupancies?.let { adapter.submitList(it) }
         })
+
+        val fab = findViewById<FloatingActionButton>(R.id.fab)
+        fab.setOnClickListener {
+            occupancyViewModel.fetchCurrentOccupancy()
+        }
     }
 }

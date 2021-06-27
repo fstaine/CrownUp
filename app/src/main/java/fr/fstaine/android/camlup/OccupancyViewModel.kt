@@ -11,6 +11,10 @@ class OccupancyViewModel(private val repository: OccupancyRepository) : ViewMode
     fun insert(occupancy: Occupancy) = viewModelScope.launch {
         repository.insert(occupancy)
     }
+
+    fun fetchCurrentOccupancy() = viewModelScope.launch {
+        repository.fetchCurrentOccupancy()
+    }
 }
 
 class OccupancyViewModelFactory(private val repository: OccupancyRepository) : ViewModelProvider.Factory {

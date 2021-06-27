@@ -60,16 +60,16 @@ abstract class OccupancyRoomDatabase : RoomDatabase() {
             occupancyDao.deleteAll()
 
             occupancyDao.insertAll(
-                Occupancy(1, Instant.now() - Duration.ofMinutes(60), 100),
-                Occupancy(2, Instant.now() - Duration.ofMinutes(50), 80),
-                Occupancy(3, Instant.now() - Duration.ofMinutes(40), 30),
-                Occupancy(4, Instant.now() - Duration.ofMinutes(30), 50),
-                Occupancy(5, Instant.now() - Duration.ofMinutes(20), 20),
-                Occupancy(6, Instant.now() - Duration.ofMinutes(10), 10),
-                Occupancy(7, Instant.now(), 10),
-                Occupancy(8, Instant.now() + Duration.ofMinutes(10), 10),
-                Occupancy(9, Instant.now() + Duration.ofMinutes(20), 20),
-                Occupancy(10, Instant.now() + Duration.ofMinutes(30), 30),
+                Occupancy(1 , Instant.now() - Duration.ofMinutes(60), 90, "Gerland"),
+                Occupancy(2 , Instant.now() - Duration.ofMinutes(50), 80, "Gerland"),
+                Occupancy(3 , Instant.now() - Duration.ofMinutes(40), 30, "Gerland"),
+                Occupancy(4 , Instant.now() - Duration.ofMinutes(30), 50, "Gerland"),
+                Occupancy(5 , Instant.now() - Duration.ofMinutes(20), 20, "Gerland"),
+                Occupancy(6 , Instant.now() - Duration.ofMinutes(10), 10, "Gerland"),
+                Occupancy(7 , Instant.now() + Duration.ofMinutes(0 ), 10, "Gerland"),
+                Occupancy(8 , Instant.now() + Duration.ofMinutes(10), 10, "Gerland"),
+                Occupancy(9 , Instant.now() + Duration.ofMinutes(20), 20, "Gerland"),
+                Occupancy(10, Instant.now() + Duration.ofMinutes(30), 30, "Gerland"),
             )
 
             occupancyDao.getAll().collect {
