@@ -1,6 +1,7 @@
 package fr.fstaine.android.camlup
 
 import android.app.Application
+import fr.fstaine.android.camlup.background.AutoBackgroundUpdater
 import fr.fstaine.android.camlup.net.ClimbUpOccupancyService
 import fr.fstaine.android.camlup.persistence.OccupancyRoomDatabase
 import kotlinx.coroutines.CoroutineScope
@@ -13,4 +14,5 @@ class CrowdUpApplication : Application() {
     val database by lazy { OccupancyRoomDatabase.getDatabase(this, applicationScope) }
     val occupancyService by lazy { ClimbUpOccupancyService() }
     val repository by lazy { OccupancyRepository(database.occupancyDao(), occupancyService, applicationScope) }
+    val backgroundUpdater by lazy { AutoBackgroundUpdater(this, repository) }
 }

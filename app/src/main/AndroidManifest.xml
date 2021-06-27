@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CamlUp">
         <activity
+            android:name=".view.MainActivity2"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.CamlUp.NoActionBar"></activity>
+        <activity
             android:name=".view.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.CamlUp.NoActionBar">
@@ -20,9 +24,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".background.AutoBackgroundUpdater$BootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

@@ -7,8 +7,9 @@ import java.time.Instant
 
 @Entity
 data class Occupancy(
-    @PrimaryKey(autoGenerate = true) val uid: Int,
     @ColumnInfo(name = "timestamp") val timestamp: Instant,
     @ColumnInfo(name = "occupancy") val occupancy: Int,
-    @ColumnInfo(name = "hall") val hall: String
-)
+    @ColumnInfo(name = "hall") val hall: Hall
+) {
+    @PrimaryKey(autoGenerate = true) var uid: Long = 0
+}
