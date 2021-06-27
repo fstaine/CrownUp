@@ -74,4 +74,7 @@ dependencies {
 
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // HTML Parser
+    implementation 'org.jsoup:jsoup:1.11.2'
 }
