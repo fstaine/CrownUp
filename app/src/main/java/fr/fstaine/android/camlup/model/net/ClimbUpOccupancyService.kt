@@ -1,4 +1,4 @@
-package fr.fstaine.android.camlup.net
+package fr.fstaine.android.camlup.model.net
 
 import android.util.Log
 import androidx.annotation.WorkerThread

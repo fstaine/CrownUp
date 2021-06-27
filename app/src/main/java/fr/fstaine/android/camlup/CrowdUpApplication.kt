@@ -1,9 +1,9 @@
 package fr.fstaine.android.camlup
 
 import android.app.Application
-import fr.fstaine.android.camlup.background.AutoBackgroundUpdater
-import fr.fstaine.android.camlup.net.ClimbUpOccupancyService
-import fr.fstaine.android.camlup.persistence.OccupancyRoomDatabase
+import fr.fstaine.android.camlup.model.background.AutoBackgroundUpdater
+import fr.fstaine.android.camlup.model.net.ClimbUpOccupancyService
+import fr.fstaine.android.camlup.model.persistence.OccupancyRoomDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 

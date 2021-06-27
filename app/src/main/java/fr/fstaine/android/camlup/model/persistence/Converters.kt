@@ -1,7 +1,7 @@
-package fr.fstaine.android.camlup.persistence
+package fr.fstaine.android.camlup.model.persistence
 
 import androidx.room.TypeConverter
-import fr.fstaine.android.camlup.persistence.entities.Hall
+import fr.fstaine.android.camlup.model.persistence.entities.Hall
 import java.time.Instant
 
 class Converters {

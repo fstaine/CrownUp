@@ -2,10 +2,10 @@ package fr.fstaine.android.camlup
 
 import android.util.Log
 import androidx.annotation.WorkerThread
-import fr.fstaine.android.camlup.net.ClimbUpOccupancyService
-import fr.fstaine.android.camlup.persistence.entities.Hall
-import fr.fstaine.android.camlup.persistence.entities.Occupancy
-import fr.fstaine.android.camlup.persistence.entities.OccupancyDao
+import fr.fstaine.android.camlup.model.net.ClimbUpOccupancyService
+import fr.fstaine.android.camlup.model.persistence.entities.Hall
+import fr.fstaine.android.camlup.model.persistence.entities.Occupancy
+import fr.fstaine.android.camlup.model.persistence.entities.OccupancyDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package fr.fstaine.android.camlup.view
+package fr.fstaine.android.camlup.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import fr.fstaine.android.camlup.R
-import fr.fstaine.android.camlup.persistence.entities.Occupancy
+import fr.fstaine.android.camlup.model.persistence.entities.Occupancy
 
 class OccupancyListAdapter : ListAdapter<Occupancy, OccupancyListAdapter.OccupancyViewHolder>(OccupancyComparator()) {
 

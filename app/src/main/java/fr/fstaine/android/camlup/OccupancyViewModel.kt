@@ -1,7 +1,7 @@
 package fr.fstaine.android.camlup
 
 import androidx.lifecycle.*
-import fr.fstaine.android.camlup.persistence.entities.Occupancy
+import fr.fstaine.android.camlup.model.persistence.entities.Occupancy
 import kotlinx.coroutines.launch
 
 class OccupancyViewModel(private val repository: OccupancyRepository) : ViewModel() {

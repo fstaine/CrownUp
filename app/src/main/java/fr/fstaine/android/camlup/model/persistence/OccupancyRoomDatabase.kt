@@ -1,4 +1,4 @@
-package fr.fstaine.android.camlup.persistence
+package fr.fstaine.android.camlup.model.persistence
 
 import android.content.Context
 import android.util.Log
@@ -7,9 +7,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
-import fr.fstaine.android.camlup.persistence.entities.Hall
-import fr.fstaine.android.camlup.persistence.entities.Occupancy
-import fr.fstaine.android.camlup.persistence.entities.OccupancyDao
+import fr.fstaine.android.camlup.model.persistence.entities.Hall
+import fr.fstaine.android.camlup.model.persistence.entities.Occupancy
+import fr.fstaine.android.camlup.model.persistence.entities.OccupancyDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.collect
 import java.time.Duration

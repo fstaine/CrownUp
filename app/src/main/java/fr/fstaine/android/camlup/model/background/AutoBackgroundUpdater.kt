@@ -1,4 +1,4 @@
-package fr.fstaine.android.camlup.background
+package fr.fstaine.android.camlup.model.background
 
 import android.app.AlarmManager
 import android.app.PendingIntent

@@ -1,4 +1,4 @@
-package fr.fstaine.android.camlup.persistence.entities
+package fr.fstaine.android.camlup.model.persistence.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
