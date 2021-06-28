@@ -12,7 +12,7 @@ import fr.fstaine.android.camlup.OccupancyViewModel
 import fr.fstaine.android.camlup.OccupancyViewModelFactory
 import fr.fstaine.android.camlup.R
 
-class MainActivity : AppCompatActivity() {
+class OldMainActivity : AppCompatActivity() {
 
     private val occupancyViewModel: OccupancyViewModel by viewModels {
         OccupancyViewModelFactory((application as CrowdUpApplication).repository)
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.old_activity_main)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         val adapter = OccupancyListAdapter()
