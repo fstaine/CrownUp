@@ -6,17 +6,89 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/refresh_button"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginTop="24dp"
+        android:text="Refresh"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#45E3E3E3"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/title_confluence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/confluence"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <TextView
+            android:id="@+id/text_occupancy_confluence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="32%"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textUpdatedAtConfluence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Updated at XXX"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="128dp"
+        android:layout_weight="1"
+        android:background="#45E3E3E3"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/title_gerland"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gerland"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <TextView
+            android:id="@+id/text_occupancy_gerland"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="56%"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textUpdatedAtGerland"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Updated at XXX"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

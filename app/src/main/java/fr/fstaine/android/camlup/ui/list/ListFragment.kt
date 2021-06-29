@@ -4,16 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import fr.fstaine.android.camlup.databinding.FragmentDashboardBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import fr.fstaine.android.camlup.CrowdUpApplication
+import fr.fstaine.android.camlup.OccupancyViewModel
+import fr.fstaine.android.camlup.OccupancyViewModelFactory
+import fr.fstaine.android.camlup.databinding.FragmentListBinding
+import fr.fstaine.android.camlup.ui.OccupancyListAdapter
 
 class ListFragment : Fragment() {
 
-    private lateinit var listViewModel: ListViewModel
-    private var _binding: FragmentDashboardBinding? = null
+    private lateinit var occupancyViewModel: OccupancyViewModel
+    private var _binding: FragmentListBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,15 +28,19 @@ class ListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        listViewModel =
-            ViewModelProvider(this).get(ListViewModel::class.java)
+        occupancyViewModel = ViewModelProvider(
+            this,
+            OccupancyViewModelFactory((context?.applicationContext as CrowdUpApplication).repository)
+        ).get(OccupancyViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentListBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        listViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+        val adapter = OccupancyListAdapter()
+        binding.recyclerview.adapter = adapter
+        binding.recyclerview.layoutManager = LinearLayoutManager(context)
+        occupancyViewModel.allOccupancies.observe(viewLifecycleOwner, Observer { occupancies ->
+            occupancies?.let { adapter.submitList(it) }
         })
         return root
     }

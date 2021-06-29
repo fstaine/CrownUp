@@ -8,6 +8,7 @@ import fr.fstaine.android.camlup.model.persistence.entities.Occupancy
 import fr.fstaine.android.camlup.model.persistence.entities.OccupancyDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 import java.time.Instant
 
@@ -20,6 +21,14 @@ class OccupancyRepository(
     val TAG = "OccupancyRepository"
 
     val allOccupancies: Flow<List<Occupancy>> = occupancyDao.getAll()
+
+    val lastOccupancies: Flow<Map<Hall, Occupancy>> = occupancyDao.getLast(Hall.GERLAND)
+        .combine(occupancyDao.getLast(Hall.CONFLUENCE)) { gerland, confluence ->
+            mapOf(
+                gerland.hall to gerland,
+                confluence.hall to confluence
+            )
+        }
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread

@@ -12,8 +12,11 @@ interface OccupancyDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg occupancies: Occupancy)
 
-    @Query("SELECT * FROM occupancy")
+    @Query("SELECT * FROM occupancy ORDER BY timestamp")
     fun getAll(): Flow<List<Occupancy>>
+
+    @Query("SELECT * FROM occupancy WHERE hall = :hall ORDER BY timestamp DESC LIMIT 1")
+    fun getLast(hall: Hall): Flow<Occupancy>
 
     @Query("DELETE FROM Occupancy")
     fun deleteAll()

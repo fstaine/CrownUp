@@ -1,6 +1,7 @@
 package fr.fstaine.android.camlup
 
 import androidx.lifecycle.*
+import fr.fstaine.android.camlup.model.persistence.entities.Hall
 import fr.fstaine.android.camlup.model.persistence.entities.Occupancy
 import kotlinx.coroutines.launch
 
@@ -9,6 +10,7 @@ class OccupancyViewModel(
 ) : ViewModel() {
 
     val allOccupancies: LiveData<List<Occupancy>> = repository.allOccupancies.asLiveData()
+    val lastOccupancies: LiveData<Map<Hall, Occupancy>> = repository.lastOccupancies.asLiveData()
 
     fun insert(occupancy: Occupancy) = viewModelScope.launch {
         repository.insert(occupancy)
